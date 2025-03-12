@@ -140,6 +140,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.light-service.blossom
 
+# FM Radio
+PRODUCT_PACKAGES += \
+    RevampedFMRadio
+    
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.1.vendor \
