@@ -273,6 +273,12 @@ PRODUCT_PACKAGES += \
     libpng.vendor \
     libutilscallstack.vendor
 
+# Viper4fx
+$(call inherit-product, packages/apps/ViPER4AndroidFX/config.mk)
+
+# BCR
+$(call inherit-product, vendor/bcr/bcr.mk)
+
 # Media
 PRODUCT_PACKAGES += \
     libavservices_minijail.vendor
