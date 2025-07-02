@@ -140,10 +140,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.light-service.blossom
 
-# FM Radio
-PRODUCT_PACKAGES += \
-    RevampedFMRadio
-    
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.1.vendor \
@@ -393,10 +389,6 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/blossom/proprietary/vendor/firmware/novatek_ts_hlt_mp.bin:recovery/root/vendor/firmware/novatek_ts_hlt_mp.bin \
     vendor/xiaomi/blossom/proprietary/vendor/firmware/novatek_ts_truly_fw.bin:recovery/root/vendor/firmware/novatek_ts_truly_fw.bin \
     vendor/xiaomi/blossom/proprietary/vendor/firmware/novatek_ts_truly_mp.bin:recovery/root/vendor/firmware/novatek_ts_truly_mp.bin
-
-# FM Radio
-PRODUCT_PACKAGES += \
-    RevampedFMRadio
 
 # HIDL
 PRODUCT_PACKAGES += \
