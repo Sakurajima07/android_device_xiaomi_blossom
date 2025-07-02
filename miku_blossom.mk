@@ -13,7 +13,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/non_ab_device.mk)
 $(call inherit-product, device/xiaomi/blossom/device.mk)
 
 # Inherit some common miku stuff.
-$(call inherit-product, vendor/miku/config/common_full_phone.mk)
+$(call inherit-product, vendor/miku/build/product/miku_product.mk)
 
 scr_resolution := 720
 TARGET_SUPPORTS_BLUR := true
