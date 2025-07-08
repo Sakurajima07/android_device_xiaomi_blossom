@@ -26,3 +26,4 @@ PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_BRAND := Redmi
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
+PRODUCT_DEFAULT_DEV_CERTIFICATE := vendor/lineage-priv/keys/releasekey
