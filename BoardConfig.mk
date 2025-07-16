@@ -103,7 +103,6 @@ BOARD_KERNEL_CMDLINE += cgroup_disable=pressure
 BOARD_KERNEL_CMDLINE += cgroup.memory=nokmem,nosocket
 BOARD_KERNEL_CMDLINE += nodebugmon
 BOARD_KERNEL_CMDLINE += noirqdebug
-BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
