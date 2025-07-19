@@ -24,7 +24,7 @@ void _ZN7android10AudioTrackC1E19audio_stream_type_tj14audio_format_t20audio_cha
 void _ZN7android10AudioTrackC1E19audio_stream_type_tj14audio_format_tjj20audio_output_flags_tPFviPvS4_ES4_i15audio_session_tNS0_13transfer_typeEPK20audio_offload_info_tjiPK18audio_attributes_tbfi(
     void *thisptr, audio_stream_type_t streamType, uint32_t sampleRate,
     audio_format_t format, audio_channel_mask_t channelMask, size_t frameCount,
-    audio_output_flags_t flags, android::AudioTrack::legacy_callback_t cbf,
+    audio_output_flags_t flags, void (*cbf)(int event, void* user, void *info),
     void *user, int32_t notificationFrames, audio_session_t sessionId,
     android::AudioTrack::transfer_type transferType,
     const audio_offload_info_t *offloadInfo, uid_t uid, pid_t pid,
@@ -36,7 +36,7 @@ void _ZN7android10AudioTrackC1E19audio_stream_type_tj14audio_format_tjj20audio_o
   attributionSource.packageName = "com.mediatek.ims";
   attributionSource.token = android::sp<android::BBinder>::make();
   attributionSource.attributionTag = std::nullopt;
-  android::wp<LegacyCallbackWrapper> cbfWrapper =
+  android::wp<android::AudioTrack::IAudioTrackCallback> cbfWrapper =
       new LegacyCallbackWrapper(cbf, user);
   _ZN7android10AudioTrackC1E19audio_stream_type_tj14audio_format_t20audio_channel_mask_tj20audio_output_flags_tRKNS_2wpINS0_19IAudioTrackCallbackEEEi15audio_session_tNS0_13transfer_typeEPK20audio_offload_info_tRKNS_7content22AttributionSourceStateEPK18audio_attributes_tbfi(
       thisptr, streamType, sampleRate, format, channelMask, frameCount, flags,

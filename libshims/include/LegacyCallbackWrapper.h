@@ -1,15 +1,16 @@
 #pragma once
 
+#include <media/AudioTrack.h>
+
 using namespace android;
 
-namespace {
 class LegacyCallbackWrapper : public AudioTrack::IAudioTrackCallback {
-  const AudioTrack::legacy_callback_t mCallback;
-  void *const mData;
+public:
+    void (*mCallback)(int event, void* user, void *info);
+    void* const mData;
 
 public:
-  LegacyCallbackWrapper(AudioTrack::legacy_callback_t callback, void *user)
-      : mCallback(callback), mData(user) {}
+    LegacyCallbackWrapper(void (*callback)(int event, void* user, void *info), void *user)  : mCallback(callback), mData(user) {}
   size_t onMoreData(const AudioTrack::Buffer &buffer) override {
     AudioTrack::Buffer copy = buffer;
     mCallback(AudioTrack::EVENT_MORE_DATA, mData, static_cast<void *>(&copy));
@@ -43,5 +44,3 @@ public:
     return copy.size();
   }
 };
-
-} // namespace
