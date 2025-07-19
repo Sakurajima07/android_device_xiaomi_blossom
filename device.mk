@@ -146,7 +146,6 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.1-service \
     android.hardware.graphics.composer@2.1-resources.vendor \
     android.hardware.graphics.common-V2-ndk.vendor:32 \
-    android.hardware.graphics.common-V2-ndk_platform.vendor:32 \
     android.hardware.memtrack@1.0-service \
     android.hardware.memtrack@1.0-impl \
     disable_configstore
