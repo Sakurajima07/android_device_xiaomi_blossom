@@ -79,10 +79,3 @@ ro.zygote.preload.enable=0
 
 # Device specific properties
 import /system/etc/properties/${ro.boot.hwname}.prop
-
-#Infinity
-ro.product.marketname=Blossom
-ro.infinity.soc=Mediatek Helio G35/25
-ro.infinity.battery=5000 mAh
-ro.infinity.display=720 x 1600, 60 Hz
-ro.infinity.camera=13MP + 2MP + 2MP

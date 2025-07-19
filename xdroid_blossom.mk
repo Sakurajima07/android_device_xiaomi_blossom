@@ -12,19 +12,19 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/non_ab_device.mk)
 # Inherit from device makefile.
 $(call inherit-product, device/xiaomi/blossom/device.mk)
 
-# Inherit some common infinity stuff.
-$(call inherit-product, vendor/infinity/config/common_full_phone.mk)
+# Inherit some common xdroidOSS stuff.
+$(call inherit-product, vendor/xdroid/config/common.mk)
+
+XDROID_MAINTAINER := Sakurajima
 
 scr_resolution := 720
 TARGET_SUPPORTS_BLUR := true
 TARGET_ENABLE_BLUR := true
 TARGET_BOOT_ANIMATION_RES := 720
 
-PRODUCT_NAME := infinity_blossom
+PRODUCT_NAME := xdroid_blossom
 PRODUCT_DEVICE := blossom
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_BRAND := Redmi
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
-INFINITY_BUILD_TYPE := UNOFFICIAL
-INFINITY_MAINTAINER := "Sakurajima"

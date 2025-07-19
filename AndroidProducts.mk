@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/infinity_blossom.mk
+    $(LOCAL_DIR)/xdroid_blossom.mk
 
 COMMON_LUNCH_CHOICES := \
-    infinity_blossom-user \
-    infinity_blossom-userdebug \
-    infinity_blossom-eng
+    xdroid_blossom-user \
+    xdroid_blossom-userdebug \
+    xdroid_blossom-eng
