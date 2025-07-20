@@ -1,0 +1,38 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Assistant <assistant@example.com>
+Date: Mon, 1 Jan 2024 00:00:00 +0000
+Subject: [PATCH] wifi: disable problematic wifi_get_rx_pkt_fates_dummy function
+
+The wifi_get_rx_pkt_fates_dummy function in libwifi-hal-mtk.so is causing
+segmentation faults during WiFi service startup. This patch disables the
+startDebugPacketFateMonitoring functionality to prevent the crash.
+
+Change-Id: I1234567890abcdef1234567890abcdef12345678
+
+diff --git a/wifi/aidl/default/wifi_sta_iface.cpp b/wifi/aidl/default/wifi_sta_iface.cpp
+index 1234567..abcdefg 100644
+--- a/wifi/aidl/default/wifi_sta_iface.cpp
++++ b/wifi/aidl/default/wifi_sta_iface.cpp
+@@ -500,6 +500,10 @@ ndk::ScopedAStatus WifiStaIface::startDebugPacketFateMonitoring() {
+     return createWifiStatus(WifiStatusCode::ERROR_WIFI_IFACE_INVALID);
+   }
+ 
++  // Disable packet fate monitoring to prevent MediaTek HAL crashes
++  LOG(INFO) << "Packet fate monitoring disabled due to MediaTek HAL instability";
++  return ndk::ScopedAStatus::ok();
++
+   legacy_hal::wifi_error legacy_status =
+       legacy_hal_.lock()->startPktFateMonitoring(ifname_);
+   return createWifiStatusFromLegacyError(legacy_status);
+@@ -550,6 +554,11 @@ ndk::ScopedAStatus WifiStaIface::getDebugRxPacketFates(std::vector<WifiDebugRxPa
+     return createWifiStatus(WifiStatusCode::ERROR_WIFI_IFACE_INVALID);
+   }
+ 
++  // Disable RX packet fates to prevent MediaTek HAL crashes
++  LOG(INFO) << "RX packet fates disabled due to MediaTek HAL instability";
++  fates.clear();
++  return ndk::ScopedAStatus::ok();
++
+   legacy_hal::wifi_error legacy_status;
+   std::vector<legacy_hal::wifi_rx_report> legacy_fates;
+   std::tie(legacy_status, legacy_fates) = legacy_hal_.lock()->getPktFates(ifname_, true, max);
