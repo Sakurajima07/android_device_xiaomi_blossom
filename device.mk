@@ -10,6 +10,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/userspace_reboot.mk)
 # Dynamic Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 PRODUCT_BUILD_SUPER_PARTITION := false
+PRODUCT_SYSTEM_HEADROOM := 2147483648
 
 # Properties
 include $(LOCAL_PATH)/vendor_logtag.mk
