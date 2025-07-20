@@ -10,3 +10,5 @@ ${deviceDir}/applyPatches.sh ${deviceDir}/patches
 export SKIP_ABI_CHECKS=true
 
 export TARGET_BOARD_PLATFORM=mt6765
+
+export RISING_MAINTAINER=Sakurajima

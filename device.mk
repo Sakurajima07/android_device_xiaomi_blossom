@@ -529,3 +529,10 @@ PRODUCT_PACKAGES += \
 
 # Inherit the proprietary files
 $(call inherit-product, vendor/xiaomi/blossom/blossom-vendor.mk)
+
+#Rising
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    RisingChipset="Blossom" \
+    RisingMaintainer="Sakurajima"
+
+RISING_MAINTAINER := Sakurajima
