@@ -12,15 +12,16 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/non_ab_device.mk)
 # Inherit from device makefile.
 $(call inherit-product, device/xiaomi/blossom/device.mk)
 
-# Inherit some common lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common YAAP stuff.
+$(call inherit-product, vendor/yaap/config/common_full_phone.mk)
+WITH_GMS := false
 
 scr_resolution := 720
 TARGET_SUPPORTS_BLUR := true
 TARGET_ENABLE_BLUR := true
 TARGET_BOOT_ANIMATION_RES := 720
 
-PRODUCT_NAME := lineage_blossom
+PRODUCT_NAME := yaap_blossom
 PRODUCT_DEVICE := blossom
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_BRAND := Redmi
