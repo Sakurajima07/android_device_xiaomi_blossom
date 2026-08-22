@@ -15,10 +15,20 @@ $(call inherit-product, device/xiaomi/blossom/device.mk)
 # Inherit some common lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-scr_resolution := 720
-TARGET_SUPPORTS_BLUR := true
+# Maintainer Name
+ORION_MAINTAINER := Qbhi
+
+# Enable/Disable GApps
+ORION_GAPPS := false
+
+# Enable/Disable Blur
 TARGET_ENABLE_BLUR := true
-TARGET_BOOT_ANIMATION_RES := 720
+
+# Bootanimation Resolution
+TARGET_BOOT_ANIMATION_RES := 1080
+
+# Bootanimation for Pixel Devices
+TARGET_PIXEL_BOOT_ANIMATION_RES := 1080
 
 PRODUCT_NAME := lineage_blossom
 PRODUCT_DEVICE := blossom
